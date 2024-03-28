@@ -23,9 +23,7 @@ function Hero() {
         <h2 className="text-3xl font-bold sm:text-4xl">Find & <span className='text-indigo-900'> Book </span> Your <span className='text-indigo-900'>Appoiment</span> With Your Fav  <span className='text-indigo-900'> Doctors </span></h2>
 
         <p className="mt-4 text-gray-600">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
-          eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
-          quidem quam repellat.
+        Access video consultation with India’s top doctors on the BookMyDoctor Web App. Connect with doctors online, available 24/7, from the comfort of your home.
         </p>
 
         <Button className='mt-10'>Explore Now</Button>

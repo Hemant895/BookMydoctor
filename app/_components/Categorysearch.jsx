@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Search } from 'lucide-react'
 import GlobalApi from '../_utils/GlobalApi'
 import Image from 'next/image'
+import Link from 'next/link'
 function Categorysearch() {
   const [categoryList,setCategoryList] = useState([]);
     useEffect(()=>{
@@ -13,7 +14,7 @@ function Categorysearch() {
     const getCategoryList=()=>(
         GlobalApi.getCategory().then((res)=>{
          const  response = res.data.data
-        console.log(response)
+        // console.log(response)
         setCategoryList(res.data.data);
         })
     )
@@ -30,8 +31,8 @@ function Categorysearch() {
     </div>
     <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
     {  
-      categoryList.map((item,index)=>(index<6 &&
-        <div key={item.id} className='flex flex-col text-center items-center  gap-2 mt-5 p-5  m-2 rounded-lg bg-primary text-white hover:scale-105 transition-all ease-in-out'> 
+      categoryList.length>0?categoryList.map((item,index)=>(index<6 &&
+        <Link href={'/search/'+item.attributes.Name} key={item.id} className='flex flex-col text-center items-center  gap-2 mt-5 p-5  m-2 rounded-lg bg-primary text-white hover:scale-105 transition-all ease-in-out'> 
            <Image
           alt=""
           src={item.attributes.Icon.data.attributes.url}
@@ -42,8 +43,14 @@ function Categorysearch() {
         <label className='font-bold'>
           {item.attributes?.Name}
         </label>
-        </div>
+        </Link>
       ))
+      :
+      [1,2,3,4,5,6].map((item,index)=>(
+        <div className=" h-[130px] w-[130px] m-2 bg-slate-200 rounded-lg animate-pulse ">
+        </div>
+
+    ))
     }
     </div>
     

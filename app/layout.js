@@ -1,6 +1,7 @@
 import { Lora } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
+import Footer from "./_components/Footer";
 
 const inter = Lora({ subsets: ["latin"] });
 
@@ -16,9 +17,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <div className="md:px-20">
        <Header/>
-      </div>
+       {children}
       
-      {children}</body>
+      </div>
+      <Footer/>
+      </body>
     </html>
   );
 }
