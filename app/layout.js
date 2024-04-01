@@ -2,6 +2,7 @@ import { Lora } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/header";
 import Footer from "./_components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Lora({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
       <div className="md:px-20">
        <Header/>
        {children}
-      
+       <Toaster/>
       </div>
       <Footer/>
       </body>

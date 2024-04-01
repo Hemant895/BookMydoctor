@@ -1,5 +1,5 @@
+import Image from 'next/image'
 import React from 'react'
-
 function Footer() {
   return (
     <div>
@@ -7,10 +7,7 @@ function Footer() {
   <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
     <div className="flex justify-center text-teal-600">
     <div className="flex items-center  gap-20">
-        <h1>
-          <span className=" font-bold text-3xl text-violet-650">Book</span>
-          <span className=" text-sky-900 font-bold text-3xl">MyDoctor</span>
-        </h1>
+    <Image src={'/bookmydoctor.png'} width={200} height={200} alt="logo"/>
         </div>
     </div>
 
