@@ -82,13 +82,13 @@ function BookAppoinment({doctor}) {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-center items-center">Book Appoinment</DialogTitle>
+            <DialogTitle className="text-center  items-center">Book Appoinment</DialogTitle>
             <DialogDescription>
               <div className="flex">
-                <div className="grid grid-cols-1 px-3  md:grid-cols-2 mt-5 items-center text-center">
+                <div className="grid grid-cols-1 px-3   md:grid-cols-2 mt-5 items-center text-center">
                   <div className="flex flex-col gap-3 px-4 lg:px-3 items-baseline">
                     {/* calender */}
-                    <h2 className="flex gap-3 items-center  mb-5">
+                    <h2 className="flex gap-3 items-center md:mb-5  ">
                         <CalendarDays className="text-primary h-5 w-5"/>
                         Select Date
                     </h2>
@@ -103,8 +103,8 @@ function BookAppoinment({doctor}) {
                       className="rounded-md border"
                     />
                   </div>
-                  <div className="mt-5 lg:mt-0 px-4 lg:px-3" >{/* Time Slot */}
-                  <h2 className="flex gap-3 items-center lg:mb-8 mb-5 ">
+                  <div className="md:mt-5 lg:mt-0 px-4 lg:px-3" >{/* Time Slot */}
+                  <h2 className="flex gap-3 items-center lg:mb-8 md:mb-5 ">
                         <Clock className="text-primary h-5 w-5 "/>
                         Select Time Slot
                     </h2>
