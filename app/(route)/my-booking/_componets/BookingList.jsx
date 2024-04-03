@@ -30,7 +30,7 @@ function BokingList({bookingList,expired,updateRecord}) {
                 className=" object cover rounded-full h-[70px] w-[70px]"
               />
               <div className='flex flex-col gap-2 w-full'>
-               <h2 className='font-bold text-[18px] items-center flex justify-between'>{item.attributes.doctor.data.attributes.Name}
+               <h2 className='font-bold text-[18px] items-center flex md:justify-between gap-3'>{item.attributes.doctor.data.attributes.Name}
                {!expired&&<CancelAppoinment onContinueClick={()=>onDeleteBooking(item)}/>}
                </h2>
                <h2 className='flex gap-2 text-gray-500'><MapPin className='text-primary  h-5 w-5'/> {item.attributes.doctor.data.attributes.Address}</h2>
