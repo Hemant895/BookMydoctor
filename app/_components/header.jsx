@@ -22,7 +22,7 @@ function Header() {
     {
       id: 2,
       name: "Explore",
-      path: "/explore",
+      path: "/search/Cardiologist",
     },
     {
       id: 3,
@@ -54,12 +54,10 @@ function Header() {
              <PopoverTrigger><Image  className='rounded-full' src={user?.picture} width={50} height={50} alt="picture"/></PopoverTrigger>
              <PopoverContent  className="w-44">
               <ul className=" felx flex-col gap-2 cursor-pointer"> 
-              <li className="bg-slat-100 p-2 hover:bg-primary rounded-lg hover:text-white" >
-                  Profile
-                </li>
-                <li className="bg-slat-100 p-2 hover:bg-primary rounded-lg hover:text-white" >
+              
+                <Link href={'/my-booking'} className="bg-slat-100 p-2 hover:bg-primary rounded-lg hover:text-white" >
                   My Bookings
-                </li>
+                </Link>
                 <li className="bg-slat-100 p-2 hover:bg-primary rounded-lg hover:text-white">
                 <LogoutLink>Log out</LogoutLink>
                 </li>

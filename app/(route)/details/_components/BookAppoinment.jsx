@@ -1,7 +1,6 @@
-"use client"
 import  { useEffect, useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
-
+import Loader from "react-loader-spinner";  
 import {
   Dialog,
   DialogContent,
@@ -22,8 +21,8 @@ function BookAppoinment({doctor}) {
   const [date, setDate] = useState(new Date());
   const [timeSlot ,setTimeSlot]= useState();
   const [selectedTimeSlot ,setselectedTimeSlot]= useState();
-  const {user}= useKindeBrowserClient()
-
+  const {user}= useKindeBrowserClient();
+  const [note,setNote] = useState('');
   useEffect(()=>{
     getTime()
   },[])
@@ -47,23 +46,29 @@ function BookAppoinment({doctor}) {
     }
     setTimeSlot(timeList)
   }
+  
   const saveBooking = ()=>{
     const data = {
         data:{
-            userName:user.given_name+""+ user.family_name,
+            userName:user.given_name+" "+ user.family_name,
            Email:user.email,
            Date:date,
             Time: selectedTimeSlot,
            doctor: doctor.id,
-            Note:"first booking"
+            Note:note
         }
     }
     GlobalApi.bookAppoinment(data).then((res)=>{
         console.log(res)
         if (res){
-           toast("Booking confirmation sent on Email");
+          // GlobalApi.sendEmail(data).then((emlRes)=>{
+          //   console.log(emlRes)
+          // })
+           toast.success(
+            'Appoinment Booked successfully');
+
         }else{        
-            toast("error");
+            toast.error("error");
           }
     })}
   
@@ -72,7 +77,7 @@ function BookAppoinment({doctor}) {
     <div >
         
       <Dialog>
-        <DialogTrigger>
+        <DialogTrigger className='mt-5 rounded-full'>
         <Button className='mt-5 rounded-full'>Book An Appoinment</Button> 
         </DialogTrigger>
         <DialogContent>
@@ -107,9 +112,9 @@ function BookAppoinment({doctor}) {
                    
                     {
                         timeSlot?.map((item,index)=>(
-                            <div>
+                            <div key={index}>
                                 <h2 
-                            onClick={()=>setselectedTimeSlot(item.time)} key={index}
+                            onClick={()=>setselectedTimeSlot(item.time)} 
                             className={`p-2 rounded-full border hover:bg-primary cursor-pointer hover:text-white ${item.time == selectedTimeSlot &&'bg-primary text-white'}`}>{item.time}</h2>
                             </div>
                             
@@ -123,7 +128,8 @@ function BookAppoinment({doctor}) {
               </div>
               
             </DialogDescription>
-            <textarea class="resize rounded-md h-20 border-[2px]" > Note</textarea>
+            <textarea class="resize rounded-md h-20 border-[2px]" placeholder=" type here" value={note} 
+          onChange={event => setNote(event.target.value)}  ></textarea>
           </DialogHeader>
           
          

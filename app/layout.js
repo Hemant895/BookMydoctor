@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <div className="md:px-20">
        <Header/>
        {children}
-       <Toaster/>
+       <Toaster position="top-center" richColors  closeButton/>
       </div>
       <Footer/>
       </body>

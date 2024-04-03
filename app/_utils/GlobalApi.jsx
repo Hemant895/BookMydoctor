@@ -15,11 +15,17 @@ const getCategory =() =>(AxiosClient.get('/categories?populate=*'))
 const getDoctorList =() =>(AxiosClient.get('/doctors?populate=*'))    
 const getDoctorByCategory=(category)=>AxiosClient.get('/doctors?filters[category][Name][$in]='+category+"&populate=*")
 const getDoctorById=(id)=>(AxiosClient.get('/doctors/'+id+"?populate=*"))
-const bookAppoinment=(data)=>(AxiosClient.post('/appoiments',data))
+const bookAppoinment=(data)=>(AxiosClient.post('/appoinments',data))
+const sendEmail=(data)=>(axios.post('/api/sendEmail',data))
+const getBookingList=(userEmail)=>(AxiosClient.get('/appoinments?filters[Email][$eq]='+userEmail+"&populate[doctor][populate][Image][populate][0]=url&populate*"))
+const DeleteAppoinment=(id)=>(AxiosClient.delete('/appoinments/'+id))
 export default {
     getCategory,
     getDoctorList,
     getDoctorByCategory,
     getDoctorById,
-    bookAppoinment
+    bookAppoinment,
+    sendEmail,
+    getBookingList,
+    DeleteAppoinment
 }        
