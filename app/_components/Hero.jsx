@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function Hero() {
@@ -25,8 +26,12 @@ function Hero() {
         <p className="mt-4 text-gray-600">
         Access video consultation with India’s top doctors on the BookMyDoctor Web App. Connect with doctors online, available 24/7, from the comfort of your home.
         </p>
-
+      
+       
+        <Link href={'/search/Cardiologist'}>
         <Button className='mt-10'>Explore Now</Button>
+        </Link>
+        
       </div>
     </div>
   </div>
