@@ -4,7 +4,7 @@ const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
 const AxiosClient = axios.create(
     {
-        baseURL:'http://localhost:1337/api' ,
+        baseURL:'https://backendbookmydoctor.onrender.com/api' ,
         headers:{
            'Content-Type': 'application/json; charset=utf-8',
           'Authorization': `Bearer ${API_KEY}`
