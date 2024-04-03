@@ -104,7 +104,7 @@ function BookAppoinment({doctor}) {
                     />
                   </div>
                   <div className="md:mt-5  mt-2 lg:mt-0 px-4 lg:px-3" >{/* Time Slot */}
-                  <h2 className="flex gap-3 items-center lg:mb-8 md:mb-5 mb">
+                  <h2 className="flex gap-3 items-center lg:mb-8 md:mb-5 mb-2">
                         <Clock className="text-primary h-5 w-5 "/>
                         Select Time Slot
                     </h2>
