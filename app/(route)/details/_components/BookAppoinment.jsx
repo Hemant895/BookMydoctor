@@ -128,7 +128,7 @@ function BookAppoinment({doctor}) {
               </div>
               
             </DialogDescription>
-            <textarea class="resize rounded-md h-20 border-[2px]" placeholder=" type here" value={note} 
+            <textarea class="resize rounded-md h-10 border-[2px]" placeholder=" type here" value={note} 
           onChange={event => setNote(event.target.value)}  ></textarea>
           </DialogHeader>
           
