@@ -77,7 +77,7 @@ function BookAppoinment({doctor}) {
     <div >
         
       <Dialog>
-        <DialogTrigger className='mt-5 rounded-full'>
+        <DialogTrigger >
         <Button className='mt-5 rounded-full'>Book An Appoinment</Button> 
         </DialogTrigger>
         <DialogContent>

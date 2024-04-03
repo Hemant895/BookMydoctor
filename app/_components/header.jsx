@@ -35,7 +35,7 @@ function Header() {
    console.log(user)
   },[user])
   return (
-    <div className=" flex justify-between p-4 shadow-md ">
+    <div className=" flex justify-between p-4 shadow-md rounded-full ">
       <div className="flex items-center  gap-20">
         <Image src={'/bookmydoctor.png'} width={200} height={200} alt="logo"/>
         <ul className="md:flex gap-20  hidden font-bold">
